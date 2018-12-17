@@ -14,6 +14,7 @@
 		D59E43E021C5ACF50044ACB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59E43DE21C5ACF50044ACB9 /* LaunchScreen.storyboard */; };
 		D59E43E921C7F9870044ACB9 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E43E821C7F9870044ACB9 /* Extensions+UIView.swift */; };
 		D59E43EC21C805020044ACB9 /* HomeBottomControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E43EB21C805020044ACB9 /* HomeBottomControlsStackView.swift */; };
+		D59E43EE21C80DCD0044ACB9 /* TopNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E43ED21C80DCD0044ACB9 /* TopNavigationStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D59E43E121C5ACF50044ACB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D59E43E821C7F9870044ACB9 /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		D59E43EB21C805020044ACB9 /* HomeBottomControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomControlsStackView.swift; sourceTree = "<group>"; };
+		D59E43ED21C80DCD0044ACB9 /* TopNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				D59E43EB21C805020044ACB9 /* HomeBottomControlsStackView.swift */,
+				D59E43ED21C80DCD0044ACB9 /* TopNavigationStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				D59E43EC21C805020044ACB9 /* HomeBottomControlsStackView.swift in Sources */,
 				D59E43D621C5ACF30044ACB9 /* AppDelegate.swift in Sources */,
 				D59E43E921C7F9870044ACB9 /* Extensions+UIView.swift in Sources */,
+				D59E43EE21C80DCD0044ACB9 /* TopNavigationStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
