@@ -11,24 +11,34 @@ import UIKit
 class ViewController: UIViewController {
     let topStackView = TopNavigationStackView()
     let buttonStackView = HomeBottomControlsStackView()
-    let blueView = UIView()
+    let cardsDeckViews = UIView()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        blueView.backgroundColor = .blue
         setupUI()
+        setupdummyCards()
+    }
+    
+    fileprivate func setupdummyCards() {
+        print("set up dummy cards")
+        let cardView = CardView()
+        cardsDeckViews.addSubview(cardView)
+        cardView.fillSuperview()
+        
     }
     
     
     // MARK:- Fileprivate
     
     fileprivate func setupUI() {
-        let overallStackView = UIStackView(arrangedSubviews: [topStackView,blueView, buttonStackView])
+        let overallStackView = UIStackView(arrangedSubviews: [topStackView,cardsDeckViews, buttonStackView])
         view.addSubview(overallStackView)
         overallStackView.axis = .vertical
         overallStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
+        overallStackView.isLayoutMarginsRelativeArrangement = true
+        overallStackView.layoutMargins = .init(top: 0, left: 12, bottom: 0, right: 12)
     }
 
 
