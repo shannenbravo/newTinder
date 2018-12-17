@@ -41,7 +41,7 @@ class CardView: UIView {
             handleChangedSate(gesture)
         //after the click had finished
         case .ended:
-            handleEnded()
+            handleEnded(gesture)
         default:
             ()
         }
@@ -51,19 +51,43 @@ class CardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func handleEnded() {
+    fileprivate func handleEnded(_ gesture: UIPanGestureRecognizer) {
+        let threshold: CGFloat = 100
+        let shouldDissmissCard = gesture.translation(in: nil).x > threshold
+        
         //butit in function to animate the ui
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
-            //go back to where it was before
-            self.transform = .identity
+            
+            if shouldDissmissCard{
+                
+                self.frame = CGRect(x: 1000, y: 0, width: self.frame.width, height: self.frame.height)
+                
+            }else{
+                
+                //go back to where it was before
+                self.transform = .identity
+            }
+    
         }) { (_) in
+            
+            self.transform = .identity
+            self.frame = CGRect(x: 0, y: 0, width: self.superview!.frame.width, height: self.superview!.frame.height)
         }
     }
     
     fileprivate func handleChangedSate(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: nil)
-        //tracks the pan 
-        self.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
+        //convert radians to degrees
+        
+        //make totation go left adn right and slow it down by divding
+        let degrees: CGFloat = translation.x / 20
+        let angle = degrees * .pi / 180
+        //roatation
+        let rotationalTranfermation = CGAffineTransform(rotationAngle: angle)
+        
+        //makes it translate and roataes
+        self.transform = rotationalTranfermation.translatedBy(x: translation.x, y: translation.y)
+        
     }
 
 
